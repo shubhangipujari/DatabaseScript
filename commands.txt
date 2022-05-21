@@ -1,0 +1,13 @@
+First Time
+git init
+git remote add origin {{URL}}
+git add -A
+git commit -m "save"
+git push -u -f origin master
+
+
+//Test VM creadentials
+UserName: dotnet8
+Password: password@123
+
+

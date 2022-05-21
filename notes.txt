@@ -1,0 +1,43 @@
+ [HttpGet]
+     [Route("getAllCategories")]
+        public string getAllCategories()
+        {
+            return "Temp";
+        }
+
+connectionstring command:Scaffold-DBContext "Server=CTSDOTNET13;Database=TestSampe;user id=sa;password=pass@word1" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+				
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsIm5iZiI6MTY1MTU4NDIyNSwiZXhwIjoxNjUxNTg0ODI1LCJpYXQiOjE2NTE1ODQyMjV9.hTjneMtoASOsw_rHmNmRB4qZHDJtXFHS4hgnxsPJ258
+
+start zookeeper
+.\zookeeper-server-start.bat C:\kafka-bin\config\zookeeper.properties
+
+start kafka
+.\kafka-server-start.bat C:\kafka-bin\config\server.properties
+
+create topic
+kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic temp-topic
+
+Bootstrap
+kafka-topics --bootstrap-server 127.0.0.1: 9092 --topic first_topic --create --partitions 3 --replication-factor 1
+
+producer
+kafka-console-producer.bat --broker-list localhost:9092 --topic temp-topic-cf
+
+consumer
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic temp-topic-cf --from-beginning
+
+list of topic
+kafka-topics --zookeeper localhost:2181 --list
+
+ALTER TABLE SCHEDULE_DETAILS
+alter COLUMN TICKET_COST int;
+
+ALTER TABLE
+  AIRLINE_DETAILS
+ALTER COLUMN
+  LOGO  NVARCHAR(20) NULL;
+
+[(ngModel)]="bookingdata.MealPreferene"
+
+
